@@ -394,12 +394,13 @@ If you are, click Submit Answer.
 
 ```{r custom-check}
 fifty_fifty_checker <- function(
-  correct = "Correct!",
-  incorrect = "May the odds be ever in your favor!",
+  correct = "Correctttt!",
+  incorrect = "Mayyyy the odds be ever in your favor!",
   ...,
   user
 ) {
   is_correct <- (runif(1) < 0.5)
+  cat("In fifty-fifty checker\n")
   gradethis::graded(
     correct = is_correct,
     message = ifelse(is_correct, correct, incorrect)

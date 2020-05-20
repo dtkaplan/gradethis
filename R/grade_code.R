@@ -15,7 +15,7 @@
 #'
 #' You can provide solution code for `grade_code()` to use in two ways:
 #'
-#' 1. Pass code as a character string or a quoted expression to the solution
+#' 1. Pass code as a character string or a quoted expression to the `grader_args`
 #' argument of `grade_code()`
 #'
 #' 2. Make a "-solution" code chunk for the exercise to be checked in a learnr

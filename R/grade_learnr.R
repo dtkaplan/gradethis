@@ -81,6 +81,11 @@ grade_learnr <- function(label = NULL,
       ))
     }
   }
+  
+  # See if there's checking code.
+  if (is.null(check_code)) {
+    return(NULL) # no point checking. Show no feedback.
+  }
 
   had_error_checking <- FALSE
   checked_result <- tryCatch(
@@ -105,7 +110,7 @@ grade_learnr <- function(label = NULL,
         grader_args$solution_quo <- rlang::as_quosure(solution_code[[length(solution_code)]],
                                                       envir_prep)
       }
-
+      
       # copy in all learnr arguments
       learnr_args <- list(...)
       learnr_args$label <- label
